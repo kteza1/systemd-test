@@ -4,4 +4,4 @@ version = "0.1.0"
 authors = ["kteza1 <k.teza1@gmail.com>"]
 
 [dependencies]
-systemd = {git = "https://github.com/jmesmon/rust-systemd"}
+systemd = {git = "https://github.com/kteza1/rust-systemd"}

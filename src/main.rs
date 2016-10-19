@@ -16,6 +16,7 @@ fn main() {
             }
             None => {
                 println!("Done .........");
+                journal.wait(10);
                 thread::sleep(Duration::new(3, 0));
             }
         };
