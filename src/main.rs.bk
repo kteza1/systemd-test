@@ -1,0 +1,23 @@
+extern crate systemd;
+use systemd::journal::{Journal, JournalFiles, JournalRecord, JournalSeek};
+
+fn main() {
+    let mut journal = Journal::open(JournalFiles::All, false, true).expect("Failed to open journal");
+    // let cursor = "s=40440bc1a0eb47d5a103bff62a010cb2;i=28;b=95f9f46c82034ab481e33afe2598162f;m=14fe76a;t=53a2ae9147074;x=1fedc8521bd130c8";
+    // let position = JournalSeek::Cursor { cursor: "abc".to_string() };
+    // match journal.seek(position) {
+    //     Ok(_) => println!("Success"),
+    //     Err(e) => println!("Error = {}", e),
+    // }
+    loop {
+    let record = match journal.next_record().unwrap() {
+        Some(record) => {
+            println!("{:?}", record);
+        }
+        None => {
+            println!("Done .........");
+        }
+    };
+    }
+
+}
